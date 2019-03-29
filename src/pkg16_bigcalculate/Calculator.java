@@ -5,7 +5,7 @@ public class Calculator extends javax.swing.JFrame {
     Double value1, value2, result, valueZero, tempValue;
     String strPoint, tempNumber1;
     char operation, operationFirst;
-    boolean point;
+    boolean point, ravno;
 
     public Calculator() {
         initComponents();
@@ -316,6 +316,9 @@ public class Calculator extends javax.swing.JFrame {
 
     private void val1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_val1ActionPerformed
         // Ввод числа 1:
+        if (ravno){
+          monitor.setText("");  
+        }
         if(monitor.getText().isEmpty()){
             monitor.setText("1");
             tempValue = Double.parseDouble(monitor.getText());
@@ -521,7 +524,8 @@ public class Calculator extends javax.swing.JFrame {
                    break;
                }
             }
-        }        
+        }
+        ravno = true;        
     }//GEN-LAST:event_btnRavnoActionPerformed
 
     private void btnPlusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlusActionPerformed
@@ -649,6 +653,7 @@ public class Calculator extends javax.swing.JFrame {
         result = 0D; 
         valueZero = 0D;
         point = false;
+        ravno = false;
         // ПРИСВОИТЬ ВСЕМ ПЕРЕМЕННЫМ ЗНАЧЕНИЕ НОЛЬ
     }//GEN-LAST:event_cleanAllActionPerformed
 	
