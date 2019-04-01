@@ -5,7 +5,7 @@ public class Calculator extends javax.swing.JFrame {
     Double value1, value2, result, valueZero, tempValue;
     String strPoint, tempNumber1;
     char operation, operationFirst;
-    boolean point, ravno;
+    boolean point, ravno, action;
 
     public Calculator() {
         initComponents();
@@ -43,7 +43,7 @@ public class Calculator extends javax.swing.JFrame {
         monitor = new javax.swing.JTextField();
         monitorSecond = new javax.swing.JTextField();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu2 = new javax.swing.JMenu();
+        jMenu1 = new javax.swing.JMenu();
         jMenu3 = new javax.swing.JMenu();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -286,8 +286,8 @@ public class Calculator extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jMenu2.setText("File");
-        jMenuBar1.add(jMenu2);
+        jMenu1.setText("File");
+        jMenuBar1.add(jMenu1);
 
         jMenu3.setText("Edit");
         jMenuBar1.add(jMenu3);
@@ -316,144 +316,217 @@ public class Calculator extends javax.swing.JFrame {
 
     private void val1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_val1ActionPerformed
         // Ввод числа 1:
-        if (ravno){
-          monitor.setText("");  
-        }
-        if(monitor.getText().isEmpty()){
+        if (ravno || action) {
+            monitor.setText("");
+        }        
+        if (monitor.getText().isEmpty()) {
             monitor.setText("1");
             tempValue = Double.parseDouble(monitor.getText());
-        }else{
-            if (point == true){      
+        } else {
+            if (point == true) {
                 monitor.setText(monitor.getText() + "1");
                 tempValue = Double.parseDouble(monitor.getText());
-            }else{
+            } else {
                 valueZero = Double.parseDouble(monitor.getText());
-                if(valueZero != 0){
+                if (valueZero != 0) {
                     monitor.setText(monitor.getText() + "1");
                     tempValue = Double.parseDouble(monitor.getText());
+                } else {
+                    monitor.setText("1");
                 }
-                else monitor.setText("1");
             }
         }
     }//GEN-LAST:event_val1ActionPerformed
 
     private void val2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_val2ActionPerformed
         // Ввод числа 2:
-        if(monitor.getText().isEmpty()){
+        if (ravno || action) {
+            monitor.setText("");
+        }        
+        if (monitor.getText().isEmpty()) {
             monitor.setText("2");
             tempValue = Double.parseDouble(monitor.getText());
-        }else{
-            valueZero = Double.parseDouble(monitor.getText());
-            if(valueZero != 0){
+        } else {
+            if (point == true) {
                 monitor.setText(monitor.getText() + "2");
                 tempValue = Double.parseDouble(monitor.getText());
+            } else {
+                valueZero = Double.parseDouble(monitor.getText());
+                if (valueZero != 0) {
+                    monitor.setText(monitor.getText() + "2");
+                    tempValue = Double.parseDouble(monitor.getText());
+                } else {
+                    monitor.setText("2");
+                }
             }
-            else monitor.setText("2");
         }
     }//GEN-LAST:event_val2ActionPerformed
 	
 	private void val3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_val3ActionPerformed
         // Ввод числа 3:
-        if(monitor.getText().isEmpty()){
+        if (ravno || action) {
+            monitor.setText("");
+        }        
+        if (monitor.getText().isEmpty()) {
             monitor.setText("3");
             tempValue = Double.parseDouble(monitor.getText());
-        }else{
-            valueZero = Double.parseDouble(monitor.getText());
-            if(valueZero != 0){
+        } else {
+            if (point == true) {
                 monitor.setText(monitor.getText() + "3");
                 tempValue = Double.parseDouble(monitor.getText());
+            } else {
+                valueZero = Double.parseDouble(monitor.getText());
+                if (valueZero != 0) {
+                    monitor.setText(monitor.getText() + "3");
+                    tempValue = Double.parseDouble(monitor.getText());
+                } else {
+                    monitor.setText("3");
+                }
             }
-            else monitor.setText("3");
         }
     }//GEN-LAST:event_val3ActionPerformed
 
     private void val4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_val4ActionPerformed
         // Ввод числа 4:
-        if(monitor.getText().isEmpty()){
+        if (ravno || action) {
+            monitor.setText("");
+        }        
+        if (monitor.getText().isEmpty()) {
             monitor.setText("4");
             tempValue = Double.parseDouble(monitor.getText());
-        }else{
-            valueZero = Double.parseDouble(monitor.getText());
-            if(valueZero != 0){
+        } else {
+            if (point == true) {
                 monitor.setText(monitor.getText() + "4");
                 tempValue = Double.parseDouble(monitor.getText());
+            } else {
+                valueZero = Double.parseDouble(monitor.getText());
+                if (valueZero != 0) {
+                    monitor.setText(monitor.getText() + "4");
+                    tempValue = Double.parseDouble(monitor.getText());
+                } else {
+                    monitor.setText("4");
+                }
             }
-            else monitor.setText("4");
         }
     }//GEN-LAST:event_val4ActionPerformed
 
     private void val5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_val5ActionPerformed
         // Ввод числа 5:
-        if(monitor.getText().isEmpty()){
+        if (ravno || action) {
+            monitor.setText("");
+        }        
+        if (monitor.getText().isEmpty()) {
             monitor.setText("5");
             tempValue = Double.parseDouble(monitor.getText());
-        }else{
-            valueZero = Double.parseDouble(monitor.getText());
-            if(valueZero != 0){
+        } else {
+            if (point == true) {
                 monitor.setText(monitor.getText() + "5");
                 tempValue = Double.parseDouble(monitor.getText());
+            } else {
+                valueZero = Double.parseDouble(monitor.getText());
+                if (valueZero != 0) {
+                    monitor.setText(monitor.getText() + "5");
+                    tempValue = Double.parseDouble(monitor.getText());
+                } else {
+                    monitor.setText("5");
+                }
             }
-            else monitor.setText("5");
         }
     }//GEN-LAST:event_val5ActionPerformed
 
     private void val6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_val6ActionPerformed
         // Ввод числа 6:
-        if(monitor.getText().isEmpty()){
+        if (ravno || action) {
+            monitor.setText("");
+        }        
+        if (monitor.getText().isEmpty()) {
             monitor.setText("6");
             tempValue = Double.parseDouble(monitor.getText());
-        }else{
-            valueZero = Double.parseDouble(monitor.getText());
-            if(valueZero != 0){
+        } else {
+            if (point == true) {
                 monitor.setText(monitor.getText() + "6");
                 tempValue = Double.parseDouble(monitor.getText());
+            } else {
+                valueZero = Double.parseDouble(monitor.getText());
+                if (valueZero != 0) {
+                    monitor.setText(monitor.getText() + "6");
+                    tempValue = Double.parseDouble(monitor.getText());
+                } else {
+                    monitor.setText("6");
+                }
             }
-            else monitor.setText("6");
         }
     }//GEN-LAST:event_val6ActionPerformed
 
     private void val7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_val7ActionPerformed
         // Ввод числа 7:
-        if(monitor.getText().isEmpty()){
+        if (ravno || action) {
+            monitor.setText("");
+        }        
+        if (monitor.getText().isEmpty()) {
             monitor.setText("7");
             tempValue = Double.parseDouble(monitor.getText());
-        }else{
-            valueZero = Double.parseDouble(monitor.getText());
-            if(valueZero != 0){
+        } else {
+            if (point == true) {
                 monitor.setText(monitor.getText() + "7");
                 tempValue = Double.parseDouble(monitor.getText());
+            } else {
+                valueZero = Double.parseDouble(monitor.getText());
+                if (valueZero != 0) {
+                    monitor.setText(monitor.getText() + "7");
+                    tempValue = Double.parseDouble(monitor.getText());
+                } else {
+                    monitor.setText("7");
+                }
             }
-            else monitor.setText("7");
         }
     }//GEN-LAST:event_val7ActionPerformed
 
     private void val8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_val8ActionPerformed
         // Ввод числа 8:
-        if(monitor.getText().isEmpty()){
+        if (ravno || action) {
+            monitor.setText("");
+        }        
+        if (monitor.getText().isEmpty()) {
             monitor.setText("8");
             tempValue = Double.parseDouble(monitor.getText());
-        }else{
-            valueZero = Double.parseDouble(monitor.getText());
-            if(valueZero != 0){
+        } else {
+            if (point == true) {
                 monitor.setText(monitor.getText() + "8");
                 tempValue = Double.parseDouble(monitor.getText());
+            } else {
+                valueZero = Double.parseDouble(monitor.getText());
+                if (valueZero != 0) {
+                    monitor.setText(monitor.getText() + "8");
+                    tempValue = Double.parseDouble(monitor.getText());
+                } else {
+                    monitor.setText("8");
+                }
             }
-            else monitor.setText("8");
         }
     }//GEN-LAST:event_val8ActionPerformed
 
     private void val9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_val9ActionPerformed
         // Ввод числа 9:
-        if(monitor.getText().isEmpty()){
+        if (ravno || action) {
+            monitor.setText("");
+        }        
+        if (monitor.getText().isEmpty()) {
             monitor.setText("9");
             tempValue = Double.parseDouble(monitor.getText());
-        }else{
-            valueZero = Double.parseDouble(monitor.getText());
-            if(valueZero != 0){
+        } else {
+            if (point == true) {
                 monitor.setText(monitor.getText() + "9");
                 tempValue = Double.parseDouble(monitor.getText());
+            } else {
+                valueZero = Double.parseDouble(monitor.getText());
+                if (valueZero != 0) {
+                    monitor.setText(monitor.getText() + "9");
+                    tempValue = Double.parseDouble(monitor.getText());
+                } else {
+                    monitor.setText("9");
+                }
             }
-            else monitor.setText("9");
         }
     }//GEN-LAST:event_val9ActionPerformed
 
@@ -473,16 +546,16 @@ public class Calculator extends javax.swing.JFrame {
 	
 	private void btnRavnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRavnoActionPerformed
         // Подсчет результата. Кнопка РАВНО:
-        if(monitor.getText().isEmpty()){ 
-            monitor.setText("0"); 
-        }else{  // если есть значение
+//        if(monitor.getText().isEmpty()){ 
+//            monitor.setText("0"); 
+//        else{  // если есть значение
             switch (this.operation) {
                case '+': {
                    value2 = Double.parseDouble(monitor.getText());
                    result = result + value2;
                    monitor.setText("");
                    monitorSecond.setText("");
-                   monitorSecond.setText(String.valueOf(result));
+                   monitor.setText(String.valueOf(result));
                    break;
                }
                case '-': {
@@ -490,7 +563,7 @@ public class Calculator extends javax.swing.JFrame {
                    result = result - value2;
                    monitor.setText("");
                    monitorSecond.setText("");
-                   monitorSecond.setText(String.valueOf(result));
+                   monitor.setText(String.valueOf(result));
                    break;
                }
                case '*': {
@@ -498,7 +571,7 @@ public class Calculator extends javax.swing.JFrame {
                    result = result * value2;
                    monitor.setText("");
                    monitorSecond.setText("");
-                   monitorSecond.setText(String.valueOf(result));
+                   monitor.setText(String.valueOf(result));
                    break;
                }
                case '/': {
@@ -513,18 +586,18 @@ public class Calculator extends javax.swing.JFrame {
                         result = result / value2;
                         monitor.setText("");
                         monitorSecond.setText("");
-                        monitorSecond.setText(String.valueOf(result));
+                        monitor.setText(String.valueOf(result));
                    }
                    break;
                }
                case '%': {
                     monitor.setText("");
                     monitorSecond.setText("");
-                    monitorSecond.setText(String.valueOf(result));
+                    monitor.setText(String.valueOf(result));
                    break;
                }
             }
-        }
+      //  }
         ravno = true;        
     }//GEN-LAST:event_btnRavnoActionPerformed
 
@@ -535,7 +608,7 @@ public class Calculator extends javax.swing.JFrame {
                 if(!monitorSecond.getText().isEmpty()){ //если он не пустой
                     monitorSecond.setText(monitorSecond.getText()+ "+" + tempNumber1);
                     result = result + Double.parseDouble(tempNumber1);
-                    monitorSecond.setText(monitorSecond.getText()+ "=" + String.valueOf(result));
+                    monitor.setText(String.valueOf(result));
                 }else{              // если пустой
                     value1 = Double.parseDouble(tempNumber1);
                     result = value1;
@@ -544,9 +617,10 @@ public class Calculator extends javax.swing.JFrame {
                     this.value1 = 0D;
                 }        
         }
-        monitor.setText("");
+        //monitor.setText("");
         this.operation = '+';
         point = false;
+        action = true;
     }//GEN-LAST:event_btnPlusActionPerformed
 
     private void btnMinusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMinusActionPerformed
@@ -654,11 +728,12 @@ public class Calculator extends javax.swing.JFrame {
         valueZero = 0D;
         point = false;
         ravno = false;
+        action = false;
         // ПРИСВОИТЬ ВСЕМ ПЕРЕМЕННЫМ ЗНАЧЕНИЕ НОЛЬ
     }//GEN-LAST:event_cleanAllActionPerformed
 	
 	private void btnPointActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPointActionPerformed
-        // TODO add your handling code here:
+        // ДРОБНАЯ ЧАСТЬ:
         //point = false;
         if (point == false){   
             if(monitor.getText().isEmpty()){
@@ -682,31 +757,37 @@ public class Calculator extends javax.swing.JFrame {
        this.operationFirst = this.operation;
          if(!monitor.getText().isEmpty()){ //если он не пустой
             tempNumber1 = monitor.getText();
-            this.value1 = (Double.parseDouble(tempNumber1) / 100) * result;
-            String tempOperation = String.valueOf(this.operation);
+            if(!action){
+                //result = 1.1;
+                monitor.setText("0");              
+            }else{
+               this.value1 = (Double.parseDouble(tempNumber1) / 100) * result;
+                String tempOperation = String.valueOf(this.operation);
 
-            switch (this.operationFirst) {
-                case '+': {
-                    result = this.result + this.value1;
-                    break;
+                switch (this.operationFirst) {
+                    case '+': {
+                        result = this.result + this.value1;
+                        break;
+                    }
+                    case '-': {
+                        result = this.result - this.value1;
+                        break;
+                    }
+                    case '*': {
+                        result = this.result * this.value1;
+                        break;
+                    }
+                    case '/': {
+                        result = this.result / this.value1;
+                        break;
+                    }
+
                 }
-                case '-': {
-                    result = this.result - this.value1;
-                    break;
-                }
-                case '*': {
-                    result = this.result * this.value1;
-                    break;
-                }
-                case '/': {
-                    result = this.result / this.value1;
-                    break;
-                }
-                        
+            monitorSecond.setText(monitorSecond.getText()+ tempOperation + value1); 
             }
-        monitorSecond.setText(monitorSecond.getText()+ tempOperation + value1 + "=" + result);
+            
         }
-        monitor.setText("");
+        monitor.setText(String.valueOf(result));
         this.operation = '%';     
     }//GEN-LAST:event_procentActionPerformed
 
@@ -761,7 +842,7 @@ public class Calculator extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JButton cleanAll;
     private javax.swing.JButton jButton2;
-    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
